@@ -1,0 +1,40 @@
+.slider-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+}
+
+.decor-slider {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.decor-card {
+  min-width: 200px;
+  margin: 0 10px;
+  transition: transform 0.3s ease;
+}
+
+.decor-image {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.decor-info {
+  text-align: center;
+  padding: 10px;
+  background-color: #fff;
+  border-radius: 5px;
+}
+.featured-title,
+.featured-description {
+    font-family: "monospace";
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}

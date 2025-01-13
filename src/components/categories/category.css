@@ -1,0 +1,44 @@
+.featured-title,
+.featured-description {
+    font-family: "monospace";
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.category-img {
+    height: 120px;
+    width: 120px;
+    margin-bottom: 5px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.category-img:hover {
+    transform: scale(1.2);
+    cursor: pointer;
+}
+
+.image-item {
+    text-align: center;
+    margin: 10px;
+}
+
+.image-title {
+    font-family: "monospace";
+    font-size: 14px;
+    margin-top: 5px;
+    color: #333;
+}
+
+.homedivRow {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.homediv {
+    margin-top: 20px;
+}
+

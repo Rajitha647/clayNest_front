@@ -1,0 +1,100 @@
+body {
+    font-family: 'Arial', sans-serif;
+}
+
+.landing-page {
+    width: 100%;
+    overflow-x: hidden;
+}
+
+.hero-section {
+    background: url("../images/banner3.webp") center center/cover;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+}
+
+.hero-title {
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+.hero-subtitle {
+    font-size: 1.5rem;
+    margin: 15px 0;
+}
+
+.btn-explore {
+    font-size: 1.2rem;
+    padding: 10px 20px;
+}
+
+.about-section img {
+    max-width: 100%;
+    height: auto;
+}
+
+.about-section h2 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+
+.featured-products h2 {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+.product-card img {
+    height: 150px;
+    max-width: 90%;
+    object-fit: contain;
+}
+
+.product-card h5 {
+    margin-top: 10px;
+    font-size: 1.2rem;
+    color: #333;
+}
+
+.product-card p {
+    font-size: 0.9rem;
+    color: #555;
+}
+
+.testimonials-section {
+    background: #f8f9fa;
+}
+
+.testimonial-card {
+    border-left: 5px solid rgb(134, 15, 15);
+}
+
+.cta-section {
+    background: rgb(134, 15, 15);
+    padding: 60px 20px;
+    color: white;
+}
+
+.btn-shop-now {
+    background-color: hsl(0, 29.60%, 61.60%);
+    color: #f8f9fa;
+    font-size: 1.2rem;
+    padding: 10px 20px;
+    font-weight: bold;
+}
+.btn-explore, .btn-shop-now {
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.btn-explore:hover, .btn-shop-now:hover {
+    transform: scale(1.1);
+    background-color: hsl(0, 6%, 41%) !important;
+}
+
+.btn-about{
+    background-color:sandybrown;
+}

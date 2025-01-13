@@ -1,0 +1,89 @@
+.carousel-item {
+    position: relative; 
+  }
+  
+  .overlay-content.top-center {
+    position: absolute;
+    top: 10%; 
+    left: 50%; 
+    transform: translateX(-50%); 
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    max-width: 60%; 
+    z-index: 10;
+    border-radius: 10px;
+  }
+  
+  .overlay-content.left-aligned {
+    position: absolute;
+    top: 50%; 
+    left: 5%; 
+    transform: translateY(-50%); 
+    color: hsl(0, 48%, 35%);
+    text-align: left;
+    padding: 20px;
+    max-width: 40%;
+    z-index: 10;
+    border-radius: 10px;
+  }
+  
+  .carousel-heading {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); 
+  }
+  
+  .carousel-contact1 {
+    font-size: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px; 
+    margin: 10px 0;
+  }
+
+  .carousel-contact {
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 15px; 
+    margin: 10px 0;
+  }
+  
+  .overlay-content .btn-warning,
+  .overlay-content2 .btn-warning {
+    
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+  }
+  
+  .overlay-content .btn-warning:hover,
+  .overlay-content2 .btn-warning:hover {
+    background-color: #ec971f; 
+    transform: scale(1.05); 
+  }
+  
+  @media (max-width: 768px) {
+    .overlay-content,
+    .overlay-content2 {
+      top: 50%;
+      left: 5%;
+      max-width: 90%;
+      padding: 15px;
+    }
+  
+    .carousel-heading {
+      font-size: 1.5rem;
+    }
+  
+    .carousel-contact {
+      flex-direction: column; 
+      gap: 10px;
+    }
+  }
+  

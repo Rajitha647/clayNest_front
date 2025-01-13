@@ -1,0 +1,85 @@
+.youtube-slider {
+    text-align: center;
+    padding: 20px;
+    font-family: 'Courier New', Courier, monospace;
+  }
+  
+  .slider-title {
+    font-size: 24px;
+    margin-bottom: 5px;
+    color: #232121;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 50px;
+  }
+  
+  .slider-subtitle {
+    font-size: 16px;
+    color: hsl(0, 0%, 0%);
+    margin-bottom: 20px;
+    font-family: 'Times New Roman', Times, serif;
+  }
+  
+  .slider-container {
+    
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+  
+  .slider-content {
+    display: flex;
+    gap: 15px;
+    transition: transform 0.5s ease-in-out;
+  }
+  
+  .video-card {
+    min-width: 300px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+  }
+  
+  .video-card iframe {
+    width: 100%;
+    height: 250px;
+  }
+  
+  .video-card .video-title {
+    font-size: 14px;
+    padding: 10px;
+    color: #333;
+  }
+  
+  .video-card.active {
+    transform: scale(1.05);
+  }
+  
+  .slider-btn {
+    
+    background-color: #ddd;
+    border: none;
+    cursor: pointer;
+    font-size: 24px;
+    padding: 10px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    border-radius: 50%;
+  }
+  
+  .prev-btn {
+    left: 10px;
+  }
+  
+  .next-btn {
+    right: 10px;
+  }
+  
+  .slider-btn:hover {
+    background-color: #aaa;
+  }
+  

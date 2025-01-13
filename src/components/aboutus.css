@@ -1,0 +1,98 @@
+/* About Us Page */
+.about-us {
+  margin-top: 50px;
+}
+
+/* Intro Section */
+.about-intro {
+  margin-bottom: 40px;
+}
+
+.about-content h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+.about-content p {
+  font-size: 1.2rem;
+  color: #34495e;
+  line-height: 1.6;
+}
+
+.about-image img {
+  border-radius: 10px;
+}
+
+/* Mission Section */
+.about-mission {
+  /* background-color: #f0f0f095; */
+  padding: 40px 0;
+  text-align: center;
+}
+
+.about-mission h2 {
+  font-size: 2.2rem;
+  color:#0b0a09;
+  margin-bottom: 20px;
+}
+
+.about-mission p {
+  font-size: 1.1rem;
+  color: black;
+  line-height: 1.8;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+
+
+/* History Section */
+.about-history {
+  margin: 40px 0;
+}
+
+.about-history h2 {
+  font-size: 2.2rem;
+  color: #2980b9;
+  margin-bottom: 20px;
+}
+
+.about-history p {
+  font-size: 1.2rem;
+  color: #34495e;
+  line-height: 1.8;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Contact Section */
+.about-contact {
+  /* background-color: #c7777795; */
+  color: #0e0d0d;
+  padding: 40px 0;
+  text-align: center;
+}
+
+.contact-info h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.contact-info p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+.contact-info Button {
+  font-size: 1.1rem;
+  padding: 10px 20px;
+  background-color: #fff;
+  color: #2980b9;
+  border: none;
+  cursor: pointer;
+}
+
+.contact-info Button:hover {
+  background-color: #f4f4f4;
+}
