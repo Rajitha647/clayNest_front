@@ -81,9 +81,6 @@ function Home() {
 
       <br />
       <br /><hr />
-      <Zoom triggerOnce>
-        <AboutUs />
-      </Zoom>
 
       <footer className="footer">
         <Container>
