@@ -6,13 +6,11 @@ import { Container, Row, Col, Card, Carousel } from "react-bootstrap";
 import Cards from './cards';
 import Categories from './categories/categories';
 import AboutUs from './aboutus';
-
 import MailOutlineIcon from '@mui/icons-material/MailOutline';
 import LocalPhoneIcon from '@mui/icons-material/LocalPhone';
 import Decorslider from './header/decorslider';
 import VideoSlider from './videoslider';
 import './categories/category.css';
-
 import { Fade, Slide, Zoom } from "react-awesome-reveal";
 
 function Home() {
@@ -23,13 +21,11 @@ function Home() {
       const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
       const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
       const percentage = (scrollTop / scrollHeight) * 100;
-
       setScrollPercentage(percentage);
       localStorage.setItem('scrollPercentage', percentage); // Save to localStorage
     };
 
     window.addEventListener('scroll', handleScroll);
-
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
@@ -80,14 +76,17 @@ function Home() {
       </Slide>
 
       <br />
-      <br /><hr />
 
       <footer className="footer">
         <Container>
-          <Row>
-            <Col className="text-center">
+          <Row className="justify-content-center text-center">
+            <Col xs={12} sm={6} md={4} lg={3}>
               <p>&copy; {new Date().getFullYear()} ClayNest. All Rights Reserved.</p>
+            </Col>
+            <Col xs={12} sm={6} md={4} lg={3}>
               <p><MailOutlineIcon fontSize="small" /> claynest@gmail.com</p>
+            </Col>
+            <Col xs={12} sm={6} md={4} lg={3}>
               <p><LocalPhoneIcon fontSize="small" /> 8606454877</p>
             </Col>
           </Row>

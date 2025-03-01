@@ -1,6 +1,6 @@
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Routes, Route, BrowserRouter, useNavigate } from 'react-router-dom';
+import { Routes, Route, BrowserRouter } from 'react-router-dom';
 import { lazy, Suspense } from 'react';
 import { Navigate } from 'react-router-dom';
 
@@ -23,6 +23,7 @@ const Cart=lazy(()=>import('./components/page/cartpage'))
 const Land=lazy(()=>import('./components/page/landingpage'))
 const Checkout=lazy(()=>import('./components/page/checkoutpage'))
 const Confirmorder=lazy(()=>import('./components/page/orderconfirmpage'))
+const Totalorders=lazy(()=>import('./components/page/myorders'))
 
 function App() {
   const isAuthenticated = localStorage.getItem("isAuthenticated");
@@ -43,6 +44,7 @@ function App() {
           <Route path='/cart' element={<Cart/>}/>
           <Route path='/checkout' element={<Checkout/>} />
           <Route path='/order' element={<Confirmorder/>} />
+          <Route path='/myorders' element={<Totalorders/>} />
           
           <Route path='/adminlogin' element={<Adminlogin/>}/>
           <Route path="/dashboard" element={isAuthenticated ? <Dashboard /> : <Navigate to="/adminlogin" />}/>
@@ -51,6 +53,7 @@ function App() {
           <Route path='/edit/:id' element={<Edit/>}/>
           </Routes>
       </Suspense>
+      
     </BrowserRouter>
     </>
   );

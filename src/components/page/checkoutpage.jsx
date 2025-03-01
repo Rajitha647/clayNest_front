@@ -15,6 +15,10 @@ import {
   CircularProgress,
 } from '@mui/material';
 import Headernav from '../header/headernav';
+import MailOutlineIcon from '@mui/icons-material/MailOutline';
+import LocalPhoneIcon from '@mui/icons-material/LocalPhone';
+
+
 
 const CheckoutPage = () => {
   const navigate = useNavigate();
@@ -244,6 +248,7 @@ const CheckoutPage = () => {
 // };
 
   return (
+    <>
     <div>
       <Headernav />
       <Box padding={4}>
@@ -361,6 +366,22 @@ const CheckoutPage = () => {
         </Grid>
       </Box>
     </div>
+    <footer className="footer">
+    <Container>
+      <Row className="justify-content-center text-center">
+        <Col xs={12} sm={6} md={4} lg={3}>
+          <p>&copy; {new Date().getFullYear()} ClayNest. All Rights Reserved.</p>
+        </Col>
+        <Col xs={12} sm={6} md={4} lg={3}>
+          <p><MailOutlineIcon fontSize="small" /> claynest@gmail.com</p>
+        </Col>
+        <Col xs={12} sm={6} md={4} lg={3}>
+          <p><LocalPhoneIcon fontSize="small" /> 8606454877</p>
+        </Col>
+      </Row>
+    </Container>
+  </footer>
+  </>
   );
 };
 

@@ -8,6 +8,9 @@ import CurrencyRupeeIcon from '@mui/icons-material/CurrencyRupee';
 import StarIcon from '@mui/icons-material/Star';
 import '../cards.css';
 import {useNavigate} from 'react-router-dom';
+import MailOutlineIcon from '@mui/icons-material/MailOutline';
+import LocalPhoneIcon from '@mui/icons-material/LocalPhone';
+
 
 function Mudstove() {
     const [products, setProducts] = useState([]);
@@ -56,6 +59,7 @@ function Mudstove() {
     
 
     return (
+        <>
         <Container className="my-5">
             <u>
                 <h1 className="text-center font-monospace" style={{ fontSize: '20px', color: '#2D2D2D' }}>MUDSTOVES</h1>
@@ -111,6 +115,22 @@ function Mudstove() {
                 )}
             </Row>
         </Container>
+        <footer className="footer">
+        <Container>
+          <Row className="justify-content-center text-center">
+            <Col xs={12} sm={6} md={4} lg={3}>
+              <p>&copy; {new Date().getFullYear()} ClayNest. All Rights Reserved.</p>
+            </Col>
+            <Col xs={12} sm={6} md={4} lg={3}>
+              <p><MailOutlineIcon fontSize="small" /> claynest@gmail.com</p>
+            </Col>
+            <Col xs={12} sm={6} md={4} lg={3}>
+              <p><LocalPhoneIcon fontSize="small" /> 8606454877</p>
+            </Col>
+          </Row>
+        </Container>
+      </footer>
+      </>
     );
 }
 

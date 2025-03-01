@@ -7,6 +7,7 @@ import EmailIcon from '@mui/icons-material/Email';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import ShoppingBagIcon from '@mui/icons-material/ShoppingBag';
 import logo from '../images/logo.png';
+import './headernav.css';  // Import CSS for styling
 
 function Headernav() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -25,109 +26,60 @@ function Headernav() {
     nav("/login");
   };
 
-  const toggleAccountMenu = () => setShowAccountMenu(!showAccountMenu);
-
   useEffect(() => {
     const storedUser = localStorage.getItem("user");
     if (storedUser) {
       const user = JSON.parse(storedUser);
       setUsername(user.name || user.phoneOrEmail);
       setIsLoggedIn(true);
-    } else {
-      setIsLoggedIn(false);
     }
-
-    setTimeout(() => {
-      setSlideIn(true);
-    }, 100);
+    setSlideIn(true);
   }, []);
-
-  const headerStyle = {
-    fontFamily: "serif",
-    fontStyle: "italic",
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-    gap: "20px",
-    backgroundColor: "rgb(134, 15, 15)",
-    color: "whitesmoke",
-    padding: "10px",
-  };
 
   return (
     <>
-      <div style={headerStyle}>
-        <div
-          style={{
-            display: "flex",
-            gap: "20px",
-            transform: slideIn ? "translateX(0)" : "translateX(-100%)",
-            transition: "transform 1s ease-in-out",
-          }}
-        >
-          <h4
-            style={{
-              fontSize: "25px",
-              fontFamily: "serif",
-              transform: slideIn ? "translateX(0)" : "translateX(-100%)",
-              transition: "transform 1s ease-in-out",
-            }}
-          >
-            BIG SALE
-          </h4>
-          <p>Use code FIRST to Get Free Delivery on your First order</p>
-          <span>
+      {/* Top Header Section */}
+      <div className="top-header">
+        <div className={`top-header-content ${slideIn ? "slide-in" : ""}`}>
+          <h4 className="sale-text">BIG SALE</h4>
+          <p className="promo-text">Use code FIRST to Get Free Delivery on your First order</p>
+          <span className="contact-info">
             <WhatsAppIcon /> 8606454877
           </span>
-          <span className="ms-3">
+          <span className="contact-info">
             <EmailIcon /> claynest@gmail.com
           </span>
         </div>
       </div>
-      <Navbar expand="lg" style={{ backgroundColor: "hsl(0, 29.60%, 61.60%)" }}>
+
+      {/* Main Navbar */}
+      <Navbar expand="lg" className="main-navbar">
         <Container>
-          <Navbar.Brand
-            style={{ fontFamily: "cursive", fontSize: "25px", fontStyle: "italic" }}
-          >
+          <Navbar.Brand>
             <img height={70} src={logo} alt="Company Logo" />
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
-            <Nav
-              className="me-auto"
-              style={{
-                fontFamily: "serif",
-                fontSize: "20px",
-                fontStyle: "italic",
-                color: "black",
-              }}
-            >
+            <Nav className="me-auto nav-links">
               <Nav.Link href="/home">Home</Nav.Link>
               <Nav.Link href="/shop">Shop</Nav.Link>
               <Nav.Link href="/kitchen">Kitchenwares</Nav.Link>
               <Nav.Link href="/gifts">Gifting/Decor</Nav.Link>
             </Nav>
-            <Nav>
+            <Nav className="nav-buttons">
               <Button variant="button" onClick={handleCart} className="me-2">
                 <ShoppingCartIcon /> Cart
               </Button>
-            </Nav>
-            <Nav>
-              <Button variant="button" onClick={()=>nav('/myorders')} className="me-2">
+              {/* <Button variant="button" onClick={() => nav('/myorders')} className="me-2">
                 <ShoppingBagIcon /> My Orders
-              </Button>
+              </Button> */}
               <Dropdown show={showAccountMenu} onToggle={setShowAccountMenu} align="end">
-                <Dropdown.Toggle
-                  as={Button}
-                  variant="button"
-                  onClick={toggleAccountMenu}
-                  className="me-2"
-                >
+                <Dropdown.Toggle as={Button} variant="button" onClick={() => setShowAccountMenu(!showAccountMenu)} className="me-2">
                   <AccountCircleIcon fontSize="large" />
                 </Dropdown.Toggle>
                 <Dropdown.Menu>
-                  <Dropdown.Item href="/myorders">My Orders</Dropdown.Item>
-                  <Dropdown.Divider />
+                  {/* <Dropdown.Item href="/myorders">My Orders</Dropdown.Item>
+                  <Dropdown.Divider /> */}
                   <Dropdown.Item onClick={handleLogout}>Logout</Dropdown.Item>
                 </Dropdown.Menu>
               </Dropdown>

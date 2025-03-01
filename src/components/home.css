@@ -40,27 +40,45 @@ body, html {
     text-align: center;
 }
 
-
+/* Footer Styles */
 .footer {
-  background-color:rgb(203, 128, 128); 
-  color: #fff; 
-  padding: 20px 0; 
-  position: relative;
-  bottom: 0;
-  width: 100%;
+  background: #c08181; /* Softer tone */
+  color: #fff;
+  padding: 15px 0; /* Reduce excessive height */
   text-align: center;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  font-size: 14px;
 }
 
-.footer p {
-  margin: 0;
-  font-size: 15px;
-  color: #ffffff; 
+/* Contact Info */
+.footer .contact-info {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
+/* Icons */
+.footer .contact-info i {
+  margin-right: 5px;
+  color: white;
+}
+
+/* Ensuring Footer Stays at the Bottom */
 html, body {
   height: 100%;
+}
+
+.main-content {
+  flex: 1;
 }
 
 footer {
   margin-top: auto;
 }
+
