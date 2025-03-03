@@ -29,7 +29,7 @@ const Orderpage = () => {
       }
 
       try {
-        const response = await fetch(`http://localhost:9000/order/getorder/${orderId}`, {
+        const response = await fetch(`https://claynest-back.onrender.com/order/getorder/${orderId}`, {
           method: 'GET',
           headers: {
             'Authorization':` Bearer ${localStorage.getItem('token')}`,  // Assuming you are using JWT

@@ -31,7 +31,7 @@ function Signup() {
 
     try {
       const response = await axios.post(
-        'http://localhost:9000/user/register',
+        'https://claynest-back.onrender.com/user/register',
         formData,
         {
           headers: {

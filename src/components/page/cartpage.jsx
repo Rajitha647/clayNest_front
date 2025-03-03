@@ -35,7 +35,7 @@ const CartPage = () => {
 
   const fetchCartItems = async () => {
     try {
-      const response = await axios.get(`http://localhost:9000/cart/${userId}`);
+      const response = await axios.get(`https://claynest-back.onrender.com/cart/${userId}`);
       setCartItems(response.data.cart);
       calculateTotals(response.data.cart);
     } catch (error) {
@@ -52,7 +52,7 @@ const CartPage = () => {
 
   const handleRemoveItem = async (productId) => {
     try {
-      await axios.delete(`http://localhost:9000/cart/${userId}/${productId}`);
+      await axios.delete(`https://claynest-back.onrender.com/cart/${userId}/${productId}`);
       fetchCartItems();
     } catch (error) {
       console.error('Error removing item:', error);
@@ -61,7 +61,7 @@ const CartPage = () => {
 
   const handleQuantityChange = async (productId, newQuantity) => {
     try {
-      await axios.patch(`http://localhost:9000/cart/${userId}`, { productId, quantity: newQuantity });
+      await axios.patch(`https://claynest-back.onrender.com/cart/${userId}`, { productId, quantity: newQuantity });
       setCartItems((prevItems) =>
         prevItems.map((item) =>
           item.productId === productId ? { ...item, quantity: newQuantity } : item
@@ -112,7 +112,7 @@ const CartPage = () => {
                   >
                     <Box display="flex" alignItems="center" flex={isMobile ? "1 1 100%" : "1 1 auto"}>
                       <img
-                        src={`http://localhost:9000/uploads/${item.image}`}
+                        src={`https://claynest-back.onrender.com/uploads/${item.image}`}
                         alt={item.productName}
                         style={{
                           width: isMobile ? 80 : 100,

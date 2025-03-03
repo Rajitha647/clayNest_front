@@ -26,7 +26,7 @@ const MyOrders = () => {
       }
 
       try {
-        const response = await axios.get(`http://localhost:9000/order/getorders/${userId}`);
+        const response = await axios.get(`https://claynest-back.onrender.com/order/getorders/${userId}`);
         setOrders(response.data.orders || []);
       } catch (err) {
         setError("Failed to fetch orders. Please try again later.");

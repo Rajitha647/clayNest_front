@@ -25,7 +25,7 @@ function Lamps() {
     
         window.scrollTo({ top: scrollTop, behavior: 'smooth' });
     
-        fetch('http://localhost:9000/products/getproductbycategory/lamps')
+        fetch('https://claynest-back.onrender.com/products/getproductbycategory/lamps')
           .then((response) => response.json())
           .then((data) => setProducts(data))
           .catch((error) => console.error('Error fetching products:', error));
@@ -41,7 +41,7 @@ function Lamps() {
                 return;
             }
     
-            const response = await axios.post("http://localhost:9000/cart", {
+            const response = await axios.post("https://claynest-back.onrender.com/cart", {
                 userId: userId, 
                 productId: product._id,
                 quantity: 1,
@@ -89,7 +89,7 @@ function Lamps() {
                                 <Card className="product-card">
                                     <Card.Img
                                         variant="top"
-                                        src={`http://localhost:9000/uploads/${product.image}`} 
+                                        src={`https://claynest-back.onrender.com/uploads/${product.image}`} 
                                         alt={product.title}
                                         style={{ height: '150px', objectFit: 'contain' }}
                                     />

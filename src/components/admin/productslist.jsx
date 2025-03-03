@@ -11,7 +11,7 @@ const ProductList = () => {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const response = await axios.get("http://localhost:9000/products/getproducts");
+        const response = await axios.get("https://claynest-back.onrender.com/products/getproducts");
         if (response.data.status === 1) {
           setProducts(response.data.data);
         } else {
@@ -41,7 +41,7 @@ const ProductList = () => {
     if (confirmDelete) {
       console.log("Deleting product with ID:", productId);  
       try {
-        const response = await axios.delete(`http://localhost:9000/products/deleteproducts/${productId}`);
+        const response = await axios.delete(`https://claynest-back.onrender.com/products/deleteproducts/${productId}`);
         if (response.data.status === 1) {
           setProducts((prevProducts) => prevProducts.filter((product) => product._id !== productId));
           alert("Product deleted successfully.");
@@ -72,7 +72,7 @@ const ProductList = () => {
             <div key={product._id} className="col-lg-4 col-md-6 col-sm-12 mb-4">
               <div className="card shadow-sm h-100">
                 <img
-                  src={`http://localhost:9000/uploads/${product.image}`}
+                  src={`https://claynest-back.onrender.com/uploads/${product.image}`}
                   className="card-img-top"
                   alt={product.title}
                   style={{ height: "150px", objectFit: "contain" }}

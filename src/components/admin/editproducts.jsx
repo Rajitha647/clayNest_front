@@ -15,7 +15,7 @@ const EditProduct = () => {
   useEffect(() => {
     const fetchProduct = async () => {
       try {
-        const response = await axios.get(`http://localhost:9000/products/findByid/${id}`);
+        const response = await axios.get(`https://claynest-back.onrender.com/products/findByid/${id}`);
         if (response.data) {
           setProduct({
             title: response.data.title || "",
@@ -55,7 +55,7 @@ const EditProduct = () => {
         formData.append(key, value);
       });
       await axios.put(
-        `http://localhost:9000/products/updateproducts/${id}`,
+        `https://claynest-back.onrender.com/products/updateproducts/${id}`,
         formData,
         { headers: { "Content-Type": "multipart/form-data" } }
       );

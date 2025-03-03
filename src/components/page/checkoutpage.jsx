@@ -101,7 +101,7 @@ const CheckoutPage = () => {
 
     try {
       setLoading(true);
-      const response = await fetch('http://localhost:9000/order/orders', {
+      const response = await fetch('https://claynest-back.onrender.com/order/orders', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -124,128 +124,6 @@ const CheckoutPage = () => {
       setLoading(false);
     }
   };
- // const handlePlaceOrder = async () => {
-//     if (!billingDetails.address || !paymentMethod) {
-//         alert("Please fill in all fields!");
-//         return;
-//     }
-
-//     const token = localStorage.getItem("token");
-
-//     if (!token) {
-//         alert("You are not authenticated. Please log in.");
-//         return;
-//     }
-
-//     const user = JSON.parse(localStorage.getItem("user"));
-//     const userId = user?.id;
-
-//     if (!userId) {
-//         alert("User not logged in");
-//         return;
-//     }
-
-//     const orderData = {
-//         userId,
-//         address: billingDetails.address,
-//         paymentMethod,
-//         products: cartItems.map((item) => ({
-//             productId: item.productId._id || item.productId,
-//             quantity: item.quantity,
-//         })),
-//     };
-
-//     if (paymentMethod === "razorpay") {
-//         try {
-//             const response = await fetch("http://localhost:9000/payment/createOrder", {
-//                 method: "POST",
-//                 headers: {
-//                     "Content-Type": "application/json",
-//                     "Authorization": Bearer ${token}, // Include the token
-//                 },
-//                 body: JSON.stringify({
-//                     amount: totals.total * 100, // Amount in paise
-//                     currency: "INR",
-//                 }),
-//             });
-
-//             const orderResponse = await response.json();
-
-//             if (orderResponse.success) {
-//                 const options = {
-//                     key: process.env.REACT_APP_RAZORPAY_KEY,
-//                     amount: orderResponse.order.amount,
-//                     currency: orderResponse.order.currency,
-//                     name: "Your Store",
-//                     description: "Order Payment",
-//                     order_id: orderResponse.order.id,
-//                     handler: async (response) => {
-//                         try {
-//                             const verifyResponse = await fetch("http://localhost:9000/payment/verify", {
-//                                 method: "POST",
-//                                 headers: {
-//                                     "Content-Type": "application/json",
-//                                     "Authorization": Bearer ${token},
-//                                 },
-//                                 body: JSON.stringify({
-//                                     razorpay_order_id: response.razorpay_order_id,
-//                                     razorpay_payment_id: response.razorpay_payment_id,
-//                                     razorpay_signature: response.razorpay_signature,
-//                                 }),
-//                             });
-
-//                             const verifyData = await verifyResponse.json();
-
-//                             if (verifyData.success) {
-//                                 await saveOrder({
-//                                     ...orderData,
-//                                     paymentStatus: "Paid",
-//                                     transactionId: response.razorpay_payment_id,
-//                                 });
-
-//                                 alert("Payment Successful!");
-//                                 nav("/order");
-//                             } else {
-//                                 alert("Payment verification failed!");
-//                             }
-//                         } catch (error) {
-//                             console.error("Error verifying payment:", error);
-//                             alert("Payment verification error.");
-//                         }
-//                     },
-//                     prefill: {
-//                         name: billingDetails.name,
-//                         email: billingDetails.email,
-//                         contact: billingDetails.phone,
-//                     },
-//                     theme: { color: "#303972" },
-//                 };
-
-//                 const razorpay = new window.Razorpay(options);
-//                 razorpay.open();
-//             } else {
-//                 alert("Failed to create Razorpay order");
-//             }
-//         } catch (error) {
-//             console.error("Error creating Razorpay order:", error);
-//             alert("Razorpay integration failed.");
-//         }
-//     } else if (paymentMethod === "cashOnDelivery") {
-//         try {
-//             await saveOrder({
-//                 ...orderData,
-//                 paymentStatus: "Pending",
-//                 transactionId: "N/A",
-//             });
-
-//             alert("Order placed successfully! Cash on Delivery selected.");
-//             nav("/order");
-//         } catch (error) {
-//             console.error("Error placing COD order:", error);
-//             alert("Failed to place order. Please try again.");
-//         }
-//     }
-// };
 
   return (
     <>

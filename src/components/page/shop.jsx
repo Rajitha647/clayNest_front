@@ -22,7 +22,7 @@ function Shop() {
         const fetchProducts = async () => {
             setLoading(true);
             try {
-                const response = await axios.get(`http://localhost:9000/products/getproducts`);
+                const response = await axios.get(`https://claynest-back.onrender.com/products/getproducts`);
                 if (response.data.status === 1) {
                     setProducts(response.data.data);
                 } else {
@@ -51,7 +51,7 @@ function Shop() {
                 return;
             }
     
-            const response = await axios.post("http://localhost:9000/cart", {
+            const response = await axios.post("https://claynest-back.onrender.com/cart", {
                 userId: userId, 
                 productId: product._id,
                 quantity: 1,
@@ -102,7 +102,7 @@ function Shop() {
                                     <Card className="product-card">
                                         <Card.Img
                                             variant="top"
-                                            src={`http://localhost:9000/uploads/${product.image}`}
+                                            src={`https://claynest-back.onrender.com/uploads/${product.image}`}
                                             alt={product.title}
                                             style={{ height: '150px', objectFit: 'contain' }}
                                         />

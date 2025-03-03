@@ -16,7 +16,7 @@ const Kitchenwares = () => {
   const nav=useNavigate()
   useEffect(() => {
     axios
-      .get("http://localhost:9000/products/getproductbycategory/kitchenwares")
+      .get("https://claynest-back.onrender.com/products/getproductbycategory/kitchenwares")
       .then((response) => setProducts(response.data))
       .catch((error) => console.error("Error fetching products:", error));
   }, []);
@@ -30,7 +30,7 @@ const Kitchenwares = () => {
             return;
         }
 
-        const response = await axios.post("http://localhost:9000/cart", {
+        const response = await axios.post("https://claynest-back.onrender.com/cart", {
             userId: userId,
             productId: product._id,
             quantity: 1,
@@ -73,7 +73,7 @@ const Kitchenwares = () => {
                                 <Card className="product-card">
                                     <Card.Img 
                                         variant="top" 
-                                        src={`http://localhost:9000/uploads/${product.image}`} 
+                                        src={`https://claynest-back.onrender.com/uploads/${product.image}`} 
                                         alt={product.title} 
                                         style={{ height: '150px', objectFit: 'contain' }} 
                                     />

@@ -14,9 +14,9 @@ function Dashboard() {
     const fetchDashboardData = async () => {
       try {
         const [usersResponse, productsResponse, ordersResponse] = await Promise.all([
-          axios.get("http://localhost:9000/user/totaluser"),
-          axios.get("http://localhost:9000/products/totalproduct"),
-          axios.get("http://localhost:9000/order/totalorder"),
+          axios.get("https://claynest-back.onrender.com/user/totaluser"),
+          axios.get("https://claynest-back.onrender.com/products/totalproduct"),
+          axios.get("https://claynest-back.onrender.com/order/totalorder"),
         ]);
   
         console.log('Users:', usersResponse.data);

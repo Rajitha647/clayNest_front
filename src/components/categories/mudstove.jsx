@@ -24,7 +24,7 @@ function Mudstove() {
     
         window.scrollTo({ top: scrollTop, behavior: 'smooth' });
     
-        fetch('http://localhost:9000/products/getproductbycategory/stove')
+        fetch('https://claynest-back.onrender.com/products/getproductbycategory/stove')
           .then((response) => response.json())
           .then((data) => setProducts(data))
           .catch((error) => console.error('Error fetching products:', error));
@@ -39,7 +39,7 @@ function Mudstove() {
                 return;
             }
     
-            const response = await axios.post("http://localhost:9000/cart", {
+            const response = await axios.post("https://claynest-back.onrender.com/cart", {
                 userId: userId, 
                 productId: product._id,
                 quantity: 1,
@@ -87,7 +87,7 @@ function Mudstove() {
                                 <Card className="product-card">
                                     <Card.Img
                                         variant="top"
-                                        src={`http://localhost:9000/uploads/${product.image}`} // Assuming the image is uploaded to this directory
+                                        src={`https://claynest-back.onrender.com/uploads/${product.image}`} // Assuming the image is uploaded to this directory
                                         alt={product.title}
                                         style={{ height: '150px', objectFit: 'contain' }}
                                     />
