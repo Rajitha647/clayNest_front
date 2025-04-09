@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import Form from 'react-bootstrap/Form';
 import { Col, Row, Button } from 'react-bootstrap';
-import './signup.css';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import './signup.css';
 
 function Signup() {
   const [formData, setFormData] = useState({
@@ -27,6 +27,8 @@ function Signup() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setErrorMessage('');
+    setSuccessMessage('');
     console.log('Sending data:', formData);
 
     try {
@@ -44,8 +46,8 @@ function Signup() {
 
       if (response.data.status === 1) {
         localStorage.setItem('userId', response.data.userId);
-        alert(response.data.msg);
-        nav('/login');
+        setSuccessMessage(response.data.msg || 'Registered successfully!');
+         nav('/login');
       } else {
         setErrorMessage(response.data.msg || 'Failed to register');
       }
@@ -56,15 +58,12 @@ function Signup() {
   };
 
   return (
-    
     <div className="form-container">
       <Form onSubmit={handleSubmit} className="form">
         <h2 className="form-heading">Create Account</h2>
 
         <Form.Group as={Row} className="mb-3" controlId="fullname">
-          <Form.Label column sm="3">
-            Fullname:
-          </Form.Label>
+          <Form.Label column sm="3">Fullname:</Form.Label>
           <Col sm="9">
             <Form.Control
               type="text"
@@ -78,9 +77,7 @@ function Signup() {
         </Form.Group>
 
         <Form.Group as={Row} className="mb-3" controlId="phone">
-          <Form.Label column sm="3">
-            Phone no:
-          </Form.Label>
+          <Form.Label column sm="3">Phone no:</Form.Label>
           <Col sm="9">
             <Form.Control
               type="tel"
@@ -94,9 +91,7 @@ function Signup() {
         </Form.Group>
 
         <Form.Group as={Row} className="mb-3" controlId="email">
-          <Form.Label column sm="3">
-            Email:
-          </Form.Label>
+          <Form.Label column sm="3">Email:</Form.Label>
           <Col sm="9">
             <Form.Control
               type="email"
@@ -110,9 +105,7 @@ function Signup() {
         </Form.Group>
 
         <Form.Group as={Row} className="mb-3" controlId="password">
-          <Form.Label column sm="3">
-            Create Password:
-          </Form.Label>
+          <Form.Label column sm="3">Create Password:</Form.Label>
           <Col sm="9">
             <Form.Control
               type="password"
@@ -128,24 +121,14 @@ function Signup() {
         <Button variant="success" type="submit" className="submit-btn">
           Sign Up
         </Button>
+
         {error && <p className="error-message">{error}</p>}
         {msg && <p className="success-message">{msg}</p>}
-        <p style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '5px', fontSize: '16px', color: '#333' }}>
-  Already have an account? Please
-  <a
-    href="/login"
-    style={{
-      textDecoration: 'none',
-      color: '#007BFF',
-      fontWeight: 'bold',
-    }}
-    onMouseEnter={(e) => (e.target.style.textDecoration = 'underline')}
-    onMouseLeave={(e) => (e.target.style.textDecoration = 'none')}
-  >
-    LOGIN
-  </a>
-</p>
 
+        <p className="redirect-text">
+          Already have an account? Please{' '}
+          <a href="/login" className="login-link">LOGIN</a>
+        </p>
       </Form>
     </div>
   );
