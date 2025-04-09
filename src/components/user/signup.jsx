@@ -33,7 +33,7 @@ function Signup() {
 
     try {
       const response = await axios.post(
-        'https://claynest-back.onrender.com/user/register',
+        `${import.meta.env.VITE_API_URL}/user/register`,
         formData,
         {
           headers: {
