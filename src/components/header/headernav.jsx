@@ -98,12 +98,15 @@ function Headernav() {
                 color: "black",
               }}
             >
-              <Nav.Link href="/home">Home</Nav.Link>
-              <Nav.Link href="/shop">Shop</Nav.Link>
-              <Nav.Link href="/kitchen">Kitchenwares</Nav.Link>
-              <Nav.Link href="/gifts">Gifting/Decor</Nav.Link>
+              <Nav.Link href="/home"><b>Home</b></Nav.Link>
+              <Nav.Link href="/shop"><b>Shop</b></Nav.Link>
+              <Nav.Link href="/kitchen"><b>Kitchenwares</b></Nav.Link>
+              <Nav.Link href="/gifts"><b>Gifting/Decor</b></Nav.Link>
             </Nav>
             <Nav>
+              <Button variant="button" onClick={()=>nav("/myorders")} className="me-2">
+                <ShoppingCartIcon /> Cart
+              </Button>
               <Button variant="button" onClick={handleCart} className="me-2">
                 <ShoppingCartIcon /> Cart
               </Button>

@@ -3,6 +3,7 @@ import axios from "axios";
 import AdminNavbar from "./navbar";
 import { useNavigate } from "react-router-dom";
 
+
 function Dashboard() {
   
   const [totalUsers, setTotalUsers] = useState(0);
@@ -36,24 +37,24 @@ function Dashboard() {
   
 
   const hideScrollbarStyles = {
-    scrollbarWidth: "none", // Firefox specific
-    msOverflowStyle: "none", // IE specific
-    WebkitOverflowScrolling: "touch", // Smooth scrolling for mobile
-    overflowY: "scroll", // Ensure scrollability
+    scrollbarWidth: "none", 
+    msOverflowStyle: "none",
+    WebkitOverflowScrolling: "touch", 
+    overflowY: "scroll", 
   };
 
   return (
+    <>
     <div style={{ display: "flex", height: "100vh" }}>
      <AdminNavbar/>
       <div
         style={{
           padding: "20px",
-          width: "calc(100% - 250px)", // Take remaining width
-          overflowY: "auto", // Scrollable content
-          backgroundColor: "#f4f4f4", // Light background color
+          width: "calc(100% - 250px)",
+          overflowY: "auto",
+          backgroundColor: "#f4f4f4", 
         }}
       >
-        {/* Dashboard Metrics Section */}
         <div
           style={{
             display: "flex",
@@ -61,13 +62,12 @@ function Dashboard() {
             marginBottom: "30px",
           }}
         >
-          {/* Total Users Card */}
           <div
             style={{
-              backgroundColor: "#28a745", // Green color for all cards
+              // backgroundColor: "#28a745", 
               padding: "20px",
               borderRadius: "10px",
-              color: "#fff",
+              color:"black",
               width: "30%",
               textAlign: "center",
             }}
@@ -76,13 +76,12 @@ function Dashboard() {
             <p style={{ fontSize: "2rem" }}>{totalUsers}</p>
           </div>
 
-          {/* Total Products Card */}
           <div
             style={{
-              backgroundColor: "#28a745", // Green color for all cards
+              // backgroundColor: "#28a745", 
               padding: "20px",
               borderRadius: "10px",
-              color: "#fff",
+              color:"black",
               width: "30%",
               textAlign: "center",
             }}
@@ -91,13 +90,12 @@ function Dashboard() {
             <p style={{ fontSize: "2rem" }}>{totalProducts}</p>
           </div>
 
-          {/* Total Orders Card */}
           <div
             style={{
-              backgroundColor: "#28a745", // Green color for all cards
+              // backgroundColor: "#28a745", 
               padding: "20px",
               borderRadius: "10px",
-              color: "#fff",
+              color:"black",
               width: "30%",
               textAlign: "center",
             }}
@@ -108,6 +106,7 @@ function Dashboard() {
         </div>
       </div>
     </div>
+   </>
   );
 }
 

@@ -61,8 +61,7 @@ const ProductList = () => {
   };
   
   return (
-    <div className="container mt-5" style={{ display: "flex" }}>
-      <AdminNavbar/>
+    <div className="container mt-5" >
       <h2 className="text-center mb-4" style={{color:"brown",fontFamily:"serif",fontSize:"30px"}}>Product List</h2>
       {loading ? (  
         <p>Loading products...</p>

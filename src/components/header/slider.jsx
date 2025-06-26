@@ -27,7 +27,7 @@ function Slider() {
     <div className="overlay-content top-center">
       <h3 className="carousel-heading">Crafting nature’s essence into timeless treasures.</h3>
       <div className="carousel-contact1">
-        <span><WhatsAppIcon /> 8606454877</span>
+        <span><WhatsAppIcon /> +91 8606454877</span>
         <span className="ms-3"><EmailIcon /> claynest@gmail.com</span>
       </div>
       <Button variant="warning" className="mt-3" onClick={handleClick}>
@@ -41,7 +41,7 @@ function Slider() {
     <div className="overlay-content left-aligned">
       <h3>Where tradition meets timeless craftsmanship.</h3>
       <div className="carousel-contact">
-        <span><WhatsAppIcon /> 8606454877</span>
+        <span><WhatsAppIcon /> +91 8606454877</span>
         <span className="ms-3"><EmailIcon /> claynest@gmail.com</span>
       </div>
       <Button variant="warning" className="mt-3" onClick={handleClick}>
@@ -55,7 +55,7 @@ function Slider() {
     <div className="overlay-content left-aligned">
       <h3>Every pot tells a story, every shape has a soul.</h3>
       <div className="carousel-contact">
-        <span><WhatsAppIcon /> 8606454877</span>
+        <span><WhatsAppIcon /> +91 8606454877</span>
         <span className="ms-3"><EmailIcon /> claynest@gmail.com</span>
       </div>
       <Button variant="warning" className="mt-3" onClick={handleClick}>
@@ -69,7 +69,7 @@ function Slider() {
     <div className="overlay-content left-aligned">
       <h3>Every pot tells a story, every shape has a soul.</h3>
       <div className="carousel-contact">
-        <span><WhatsAppIcon /> 8606454877</span>
+        <span><WhatsAppIcon /> +91 8606454877</span>
         <span className="ms-3"><EmailIcon /> claynest@gmail.com</span>
       </div>
       <Button variant="warning" className="mt-3" onClick={handleClick}>
@@ -83,7 +83,7 @@ function Slider() {
     <div className="overlay-content left-aligned">
       <h3>Every pot tells a story, every shape has a soul.</h3>
       <div className="carousel-contact">
-        <span><WhatsAppIcon /> 8606454877</span>
+        <span><WhatsAppIcon /> +91 8606454877</span>
         <span className="ms-3"><EmailIcon /> claynest@gmail.com</span>
       </div>
       <Button variant="warning" className="mt-3" onClick={handleClick}>

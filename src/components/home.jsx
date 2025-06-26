@@ -2,7 +2,7 @@ import './home.css';
 import React, { useState, useEffect } from 'react';
 import Slider from "./header/slider";
 import Headernav from './header/headernav';
-import { Container, Row, Col, Card, Carousel } from "react-bootstrap";
+import { Container, Row, Col, Card, Carousel, Button } from "react-bootstrap";
 import Cards from './cards';
 import Categories from './categories/categories';
 import AboutUs from './aboutus';
@@ -14,10 +14,11 @@ import VideoSlider from './videoslider';
 import './categories/category.css';
 
 import { Fade, Slide, Zoom } from "react-awesome-reveal";
+import { useNavigate } from 'react-router-dom';
 
 function Home() {
   const [scrollPercentage, setScrollPercentage] = useState(0);
-
+   const nav=useNavigate()
   useEffect(() => {
     const handleScroll = () => {
       const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
@@ -25,7 +26,7 @@ function Home() {
       const percentage = (scrollTop / scrollHeight) * 100;
 
       setScrollPercentage(percentage);
-      localStorage.setItem('scrollPercentage', percentage); // Save to localStorage
+      localStorage.setItem('scrollPercentage', percentage); 
     };
 
     window.addEventListener('scroll', handleScroll);
@@ -81,9 +82,9 @@ function Home() {
 
       <br />
       <br /><hr />
-      <Zoom triggerOnce>
+      {/* <Zoom triggerOnce>
         <AboutUs />
-      </Zoom>
+      </Zoom> */}
 
       <footer className="footer">
         <Container>
@@ -91,7 +92,8 @@ function Home() {
             <Col className="text-center">
               <p>&copy; {new Date().getFullYear()} ClayNest. All Rights Reserved.</p>
               <p><MailOutlineIcon fontSize="small" /> claynest@gmail.com</p>
-              <p><LocalPhoneIcon fontSize="small" /> 8606454877</p>
+              <p><LocalPhoneIcon fontSize="small" /> +91 9087654312</p>
+              <Button variant='warning'  onClick={()=>nav('/about')}>About US</Button>
             </Col>
           </Row>
         </Container>
