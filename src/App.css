@@ -1,0 +1,25 @@
+
+.footer {
+    background-color:rgb(203, 128, 128); 
+    color: #fff; 
+    padding: 20px 0; 
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+  }
+  
+  .footer p {
+    margin: 0;
+    font-size: 15px;
+    color: #ffffff; 
+  }
+  
+  html, body {
+    height: 100%;
+  }
+  
+  footer {
+    margin-top: auto;
+  }
+  

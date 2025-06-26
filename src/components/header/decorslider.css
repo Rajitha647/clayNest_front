@@ -1,0 +1,32 @@
+.slider-container {
+  overflow-x: hidden;
+  width: 100%;
+  height: fit-content;
+  position: relative;
+}
+
+.product-slider {
+  display: flex;
+  transition: transform 2s ease-out;
+  flex-wrap: nowrap;
+  justify-content: center;
+}
+
+.product-card {
+  flex: 0 0 auto;
+  margin: 0 10px;
+  text-align: center;
+  width: 100%;
+}
+
+@media (min-width: 600px) {
+  .product-card {
+    width: 200px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .product-card {
+    width: 250px;
+  }
+}
