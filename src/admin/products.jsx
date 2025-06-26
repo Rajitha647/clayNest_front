@@ -60,11 +60,7 @@ const AddProduct = () => {
     formData.append("stock", stock);
     formData.append("image", image);
 
-<<<<<<< HEAD
     const api = `http://localhost:9000/products/addproduct`;
-=======
-    const api = `https://claynest-back.onrender.com/products/addproduct`;
->>>>>>> 4b61a809c19b4b8bcea21c06dcfa1aabc4389570
 
     try {
       setIsLoading(true);

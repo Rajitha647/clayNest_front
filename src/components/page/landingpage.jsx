@@ -11,7 +11,10 @@ function LandingPage() {
     const nav = useNavigate("")
     return (
         <div className="landing-page">
+<<<<<<< HEAD
             {/* Hero Section */}
+=======
+>>>>>>> 4b61a809c19b4b8bcea21c06dcfa1aabc4389570
             <section className="hero-section">
                 <Container className="text-center text-white">
                     <Fade direction="down" triggerOnce>
@@ -22,7 +25,10 @@ function LandingPage() {
                 </Container>
             </section>
 
+<<<<<<< HEAD
             {/* About Section */}
+=======
+>>>>>>> 4b61a809c19b4b8bcea21c06dcfa1aabc4389570
             <section className="about-section py-5">
                 <Container>
                     <Row>
@@ -51,7 +57,10 @@ function LandingPage() {
                 </Container>
             </section>
 
+<<<<<<< HEAD
             {/* Featured Products Section */}
+=======
+>>>>>>> 4b61a809c19b4b8bcea21c06dcfa1aabc4389570
             <section className="featured-products py-5 bg-light">
                 <Container>
                     <h2 className="text-center mb-4">Our Featured Products</h2>
@@ -83,7 +92,10 @@ function LandingPage() {
                 </Container>
             </section>
 
+<<<<<<< HEAD
             {/* Testimonials Section */}
+=======
+>>>>>>> 4b61a809c19b4b8bcea21c06dcfa1aabc4389570
             <section className="testimonials-section py-5">
                 <Container>
                     <h2 className="text-center mb-4">What Our Customers Say</h2>
@@ -105,7 +117,10 @@ function LandingPage() {
                 </Container>
             </section>
 
+<<<<<<< HEAD
             {/* Call to Action Section */}
+=======
+>>>>>>> 4b61a809c19b4b8bcea21c06dcfa1aabc4389570
             <section className="cta-section py-5 text-white text-center">
                 <Container>
                     <Slide direction="up" cascade damping={0.2} triggerOnce>

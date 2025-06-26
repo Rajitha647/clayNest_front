@@ -1,0 +1,80 @@
+/* Top header section */
+.top-header {
+    background-color: rgb(134, 15, 15);
+    color: whitesmoke;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-wrap: wrap;
+  }
+  
+  .top-header-content {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    align-items: center;
+    transition: transform 1s ease-in-out;
+  }
+  
+  .slide-in {
+    transform: translateX(0);
+  }
+  
+  .sale-text {
+    font-size: 20px;
+    font-weight: bold;
+    font-family: serif;
+  }
+  
+  .promo-text {
+    font-size: 16px;
+    margin: 0;
+  }
+  
+  .contact-info {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  
+  /* Navbar */
+  .main-navbar {
+    background-color: hsl(0, 29.60%, 61.60%);
+  }
+  
+  .nav-links {
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  .nav-buttons {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  
+  .nav-buttons button {
+    font-size: 16px;
+    padding: 5px 10px;
+  }
+  
+  @media (max-width: 768px) {
+    .top-header-content {
+      flex-direction: column;
+      gap: 10px;
+      text-align: center;
+    }
+  
+    .nav-buttons {
+      justify-content: center;
+      width: 100%;
+    }
+  
+    .nav-links {
+      text-align: center;
+      width: 100%;
+    }
+  }
+  

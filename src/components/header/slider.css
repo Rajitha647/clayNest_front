@@ -86,4 +86,33 @@
       gap: 10px;
     }
   }
+<<<<<<< HEAD
+=======
+  .carousel-item img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+  
+  /* Tablet screens */
+  @media (max-width: 992px) {
+    .carousel-item img {
+      height: 450px; /* Adjust as needed */
+    }
+  }
+  
+  /* Mobile screens */
+  @media (max-width: 768px) {
+    .carousel-item img {
+      height: 350px; /* Adjust as needed */
+    }
+  }
+  
+  /* Smaller mobile screens */
+  @media (max-width: 576px) {
+    .carousel-item img {
+      height: 300px; /* Adjust as needed */
+    }
+  }
+>>>>>>> 4b61a809c19b4b8bcea21c06dcfa1aabc4389570
   

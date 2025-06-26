@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 /* General Styles */
+=======
+>>>>>>> 4b61a809c19b4b8bcea21c06dcfa1aabc4389570
 body {
     font-family: 'Arial', sans-serif;
 }
@@ -33,7 +36,10 @@ body {
     padding: 10px 20px;
 }
 
+<<<<<<< HEAD
 /* About Section */
+=======
+>>>>>>> 4b61a809c19b4b8bcea21c06dcfa1aabc4389570
 .about-section img {
     max-width: 100%;
     height: auto;
@@ -44,7 +50,10 @@ body {
     margin-bottom: 15px;
 }
 
+<<<<<<< HEAD
 /* Featured Products Section */
+=======
+>>>>>>> 4b61a809c19b4b8bcea21c06dcfa1aabc4389570
 .featured-products h2 {
     font-size: 2rem;
     color: #333;
@@ -68,7 +77,10 @@ body {
     color: #555;
 }
 
+<<<<<<< HEAD
 /* Testimonials Section */
+=======
+>>>>>>> 4b61a809c19b4b8bcea21c06dcfa1aabc4389570
 .testimonials-section {
     background: #f8f9fa;
 }
@@ -77,7 +89,10 @@ body {
     border-left: 5px solid rgb(134, 15, 15);
 }
 
+<<<<<<< HEAD
 /* CTA Section */
+=======
+>>>>>>> 4b61a809c19b4b8bcea21c06dcfa1aabc4389570
 .cta-section {
     background: rgb(134, 15, 15);
     padding: 60px 20px;
@@ -91,7 +106,10 @@ body {
     padding: 10px 20px;
     font-weight: bold;
 }
+<<<<<<< HEAD
 /* Smooth transition for buttons */
+=======
+>>>>>>> 4b61a809c19b4b8bcea21c06dcfa1aabc4389570
 .btn-explore, .btn-shop-now {
     transition: transform 0.3s ease, background-color 0.3s ease;
 }

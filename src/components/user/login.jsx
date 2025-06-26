@@ -23,6 +23,7 @@ function Login() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
+<<<<<<< HEAD
       const response = await axios.post('http://localhost:9000/user/login', formData);
 
       if (response.data.status === 1) {
@@ -40,6 +41,22 @@ function Login() {
         navigate('/home'); // Navigate to home on successful login
       } else {
         alert(response.data.msg); // Display error message if login fails
+=======
+      const response = await axios.post(`${import.meta.env.VITE_API_URL}/user/login`, formData);
+
+      if (response.data.status === 1) {
+        localStorage.setItem('userId', response.data.userId);
+        const { token, user } = response.data; 
+
+        localStorage.setItem('token', token);
+
+        localStorage.setItem('user', JSON.stringify(user));
+
+        alert(response.data.msg);
+        navigate('/home'); 
+      } else {
+        alert(response.data.msg); 
+>>>>>>> 4b61a809c19b4b8bcea21c06dcfa1aabc4389570
       }
     } catch (error) {
       console.error('Error during login', error);
@@ -48,6 +65,10 @@ function Login() {
   };
 
   return (
+<<<<<<< HEAD
+=======
+    
+>>>>>>> 4b61a809c19b4b8bcea21c06dcfa1aabc4389570
     <div className="form-container" style={{ paddingBottom: '100px' }}>
       <Form onSubmit={handleSubmit} className="form">
         <h2 className="form-heading">Login</h2>
@@ -81,10 +102,29 @@ function Login() {
         </Form.Group>
 
         <Button variant="warning" type="submit" className="submit-btn">Login</Button>
+<<<<<<< HEAD
 
         <p style={{ display: 'flex', justifyContent: 'center' }}>
           Don't have an account? Please <a href="/signup">SIGN UP</a>
         </p>
+=======
+        <p style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '5px', fontSize: '16px', color: '#333' }}>
+  Dont't have an account? Please
+  <a
+    href="/signup"
+    style={{
+      textDecoration: 'none',
+      color: '#007BFF',
+      fontWeight: 'bold',
+    }}
+    onMouseEnter={(e) => (e.target.style.textDecoration = 'underline')}
+    onMouseLeave={(e) => (e.target.style.textDecoration = 'none')}
+  >
+    Signup
+  </a>
+</p>
+
+>>>>>>> 4b61a809c19b4b8bcea21c06dcfa1aabc4389570
       </Form>
     </div>
   );

@@ -7,7 +7,12 @@ import StarIcon from '@mui/icons-material/Star';
 import '../cards.css';
 import {useNavigate} from 'react-router-dom';
 import Headernav from '../header/headernav';
+<<<<<<< HEAD
 
+=======
+import MailOutlineIcon from '@mui/icons-material/MailOutline';
+import LocalPhoneIcon from '@mui/icons-material/LocalPhone';
+>>>>>>> 4b61a809c19b4b8bcea21c06dcfa1aabc4389570
 
 function Gift() {
 
@@ -18,14 +23,21 @@ function Gift() {
     useEffect(() => {
         const savedPercentage = localStorage.getItem('scrollPercentage') || 0;
     
+<<<<<<< HEAD
         // Apply saved scroll position
+=======
+>>>>>>> 4b61a809c19b4b8bcea21c06dcfa1aabc4389570
         const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
         const scrollTop = (savedPercentage / 100) * scrollHeight;
     
         window.scrollTo({ top: scrollTop, behavior: 'smooth' });
     
+<<<<<<< HEAD
         // Fetch products (example)
         fetch('http://localhost:9000/products/getproductbycategory/giftsanddecors')
+=======
+        fetch('https://claynest-back.onrender.com/products/getproductbycategory/giftsanddecors')
+>>>>>>> 4b61a809c19b4b8bcea21c06dcfa1aabc4389570
           .then((response) => response.json())
           .then((data) => setProducts(data))
           .catch((error) => console.error('Error fetching products:', error));
@@ -34,17 +46,27 @@ function Gift() {
 
       const handleCart = async (product) => {
         try {
+<<<<<<< HEAD
             // Correct the retrieval of the userId from localStorage by using a string key
             const userId = localStorage.getItem("userId"); // Assuming the key in localStorage is 'userId'
             
             // Check if userId is available
+=======
+            const userId = localStorage.getItem("userId"); 
+            
+>>>>>>> 4b61a809c19b4b8bcea21c06dcfa1aabc4389570
             if (!userId) {
                 alert("User is not logged in.");
                 return;
             }
     
+<<<<<<< HEAD
             const response = await axios.post("http://localhost:9000/cart", {
                 userId: userId, // Use the retrieved userId
+=======
+            const response = await axios.post("https://claynest-back.onrender.com/cart", {
+                userId: userId,
+>>>>>>> 4b61a809c19b4b8bcea21c06dcfa1aabc4389570
                 productId: product._id,
                 quantity: 1,
                 price: product.price,
@@ -85,7 +107,10 @@ function Gift() {
                 />
             </div>
 
+<<<<<<< HEAD
             {/* Products Grid */}
+=======
+>>>>>>> 4b61a809c19b4b8bcea21c06dcfa1aabc4389570
             <Row>
                 {products.length > 0 ? (
                     products
@@ -95,7 +120,11 @@ function Gift() {
                                 <Card className="product-card">
                                     <Card.Img
                                         variant="top"
+<<<<<<< HEAD
                                         src={`http://localhost:9000/uploads/${product.image}`} // Assuming the image is uploaded to this directory
+=======
+                                        src={`https://claynest-back.onrender.com/uploads/${product.image}`} // Assuming the image is uploaded to this directory
+>>>>>>> 4b61a809c19b4b8bcea21c06dcfa1aabc4389570
                                         alt={product.title}
                                         style={{ height: '150px', objectFit: 'contain' }}
                                     />
@@ -106,15 +135,21 @@ function Gift() {
                                         </Card.Text>
                                         <Card.Text>{product.description}</Card.Text>
 
+<<<<<<< HEAD
                                         {/* Product Rating */}
+=======
+>>>>>>> 4b61a809c19b4b8bcea21c06dcfa1aabc4389570
                                         <div>
                                             {[...Array(5)].map((_, i) => (
                                                 <StarIcon key={i} style={{ color: i < product.rating ? '#FFD700' : '#ccc' }} />
                                             ))}
                                         </div>
 
+<<<<<<< HEAD
                                         {/* Buttons */}
                                       
+=======
+>>>>>>> 4b61a809c19b4b8bcea21c06dcfa1aabc4389570
                                         <Button variant="secondary" onClick={() => handleCart(product)} className="btn-cart">
                                             <ShoppingCartIcon /> Add to Cart
                                         </Button>
@@ -127,6 +162,24 @@ function Gift() {
                 )}
             </Row>
         </Container>
+<<<<<<< HEAD
+=======
+        <footer className="footer">
+        <Container>
+          <Row className="justify-content-center text-center">
+            <Col xs={12} sm={6} md={4} lg={3}>
+              <p>&copy; {new Date().getFullYear()} ClayNest. All Rights Reserved.</p>
+            </Col>
+            <Col xs={12} sm={6} md={4} lg={3}>
+              <p><MailOutlineIcon fontSize="small" /> claynest@gmail.com</p>
+            </Col>
+            <Col xs={12} sm={6} md={4} lg={3}>
+              <p><LocalPhoneIcon fontSize="small" /> 8606454877</p>
+            </Col>
+          </Row>
+        </Container>
+      </footer>
+>>>>>>> 4b61a809c19b4b8bcea21c06dcfa1aabc4389570
         </>
 
     );

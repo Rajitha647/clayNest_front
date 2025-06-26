@@ -5,22 +5,6 @@ import AdminNavbar from "./navbar";
 import axios from "axios";
 
 const EditProduct = () => {
-<<<<<<< HEAD
-  const { id } = useParams(); // Get the product ID from URL params
-  const navigate = useNavigate();
-
-  const [product, setProduct] = useState(null); // State to store product data
-  const [message, setMessage] = useState(""); // State to display error/success messages
-  const [loading, setLoading] = useState(false); // State to manage loading status
-
-  // Fetch product data on component mount
-  useEffect(() => {
-    const fetchProduct = async () => {
-      try {
-        console.log("Fetching product with ID:", id);
-        const response = await axios.get(`http://localhost:9000/products/findByid/${id}`);
-
-=======
   const { id } = useParams();
   const navigate = useNavigate();
 
@@ -31,8 +15,7 @@ const EditProduct = () => {
   useEffect(() => {
     const fetchProduct = async () => {
       try {
-        const response = await axios.get(`https://claynest-back.onrender.com/products/findByid/${id}`);
->>>>>>> 4b61a809c19b4b8bcea21c06dcfa1aabc4389570
+        const response = await axios.get(`http://localhost:9000/products/findByid/${id}`);
         if (response.data) {
           setProduct({
             title: response.data.title || "",
@@ -47,88 +30,44 @@ const EditProduct = () => {
           setMessage("Product not found");
         }
       } catch (error) {
-<<<<<<< HEAD
-        console.error("Error fetching product:", error);
-        setMessage("Error fetching product data.");
-      }
-    };
-
-    fetchProduct();
-  }, [id]);
-
-  // Handle form field changes
-=======
         setMessage("Error fetching product data.");
       }
     };
     fetchProduct();
   }, [id]);
 
->>>>>>> 4b61a809c19b4b8bcea21c06dcfa1aabc4389570
   const handleChange = (e) => {
     const { name, value } = e.target;
     setProduct((prev) => ({ ...prev, [name]: value }));
   };
 
-<<<<<<< HEAD
-  // Handle image upload
-=======
->>>>>>> 4b61a809c19b4b8bcea21c06dcfa1aabc4389570
   const handleImageChange = (e) => {
     const { name, files } = e.target;
     setProduct((prev) => ({ ...prev, [name]: files[0] }));
   };
 
-<<<<<<< HEAD
-  // Handle form submission
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
-
-=======
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setLoading(true);
->>>>>>> 4b61a809c19b4b8bcea21c06dcfa1aabc4389570
     try {
       const formData = new FormData();
       Object.entries(product).forEach(([key, value]) => {
         formData.append(key, value);
       });
-<<<<<<< HEAD
-
-      const response = await axios.put(
-        `http://localhost:9000/products/updateproducts/${id}`,
-        formData,
-        { headers: { "Content-Type": "multipart/form-data" } }
-      );
-
-      console.log("Update response:", response.data); // Debugging log
-
-      alert("Product updated successfully!");
-      navigate("/view"); // Redirect to the product view page
-    } catch (error) {
-      console.error("Error updating product", error);
-=======
       await axios.put(
-        `https://claynest-back.onrender.com/products/updateproducts/${id}`,
+        `http://localhost:9000/products/updateproducts/${id}`,
         formData,
         { headers: { "Content-Type": "multipart/form-data" } }
       );
       alert("Product updated successfully!");
       navigate("/view");
     } catch (error) {
->>>>>>> 4b61a809c19b4b8bcea21c06dcfa1aabc4389570
       alert("Failed to update product");
     } finally {
       setLoading(false);
     }
   };
 
-<<<<<<< HEAD
-  // Show loading spinner or message if product data is not loaded yet
-=======
->>>>>>> 4b61a809c19b4b8bcea21c06dcfa1aabc4389570
   if (!product) {
     return (
       <Container className="text-center" style={{ marginTop: "100px" }}>
@@ -141,16 +80,10 @@ const EditProduct = () => {
     <div style={{ display: "flex" }}>
       <AdminNavbar />
       <Container style={{ maxWidth: "500px", marginTop: "50px" }}>
-<<<<<<< HEAD
-        <h2 className="text-center" style={{color:"brown",fontFamily:"serif",fontSize:"30px"}}>Edit Product</h2>
-        <Form onSubmit={handleSubmit} className="mt-4">
-          {/* Product Title */}
-=======
         <h2 className="text-center" style={{ color: "brown", fontFamily: "serif", fontSize: "30px" }}>
           Edit Product
         </h2>
         <Form onSubmit={handleSubmit} className="mt-4">
->>>>>>> 4b61a809c19b4b8bcea21c06dcfa1aabc4389570
           <Form.Group controlId="title" className="mb-3">
             <Form.Label>Title</Form.Label>
             <Form.Control
@@ -162,11 +95,6 @@ const EditProduct = () => {
               required
             />
           </Form.Group>
-<<<<<<< HEAD
-
-          {/* Product Description */}
-=======
->>>>>>> 4b61a809c19b4b8bcea21c06dcfa1aabc4389570
           <Form.Group controlId="description" className="mb-3">
             <Form.Label>Description</Form.Label>
             <Form.Control
@@ -179,14 +107,7 @@ const EditProduct = () => {
               required
             />
           </Form.Group>
-<<<<<<< HEAD
-
-          {/* Two Columns: Category and Stock */}
           <div style={{ display: "flex", gap: "10px" }}>
-            {/* Product Category */}
-=======
-          <div style={{ display: "flex", gap: "10px" }}>
->>>>>>> 4b61a809c19b4b8bcea21c06dcfa1aabc4389570
             <Form.Group controlId="category" className="mb-3" style={{ flex: "1" }}>
               <Form.Label>Category</Form.Label>
               <Form.Select
@@ -202,11 +123,6 @@ const EditProduct = () => {
                 <option value="stove">Stove</option>
               </Form.Select>
             </Form.Group>
-<<<<<<< HEAD
-
-            {/* Product Stock */}
-=======
->>>>>>> 4b61a809c19b4b8bcea21c06dcfa1aabc4389570
             <Form.Group controlId="stock" className="mb-3" style={{ flex: "1" }}>
               <Form.Label>Stock</Form.Label>
               <Form.Select
@@ -221,14 +137,7 @@ const EditProduct = () => {
               </Form.Select>
             </Form.Group>
           </div>
-<<<<<<< HEAD
-
-          {/* Two Columns: Price and Rating */}
           <div style={{ display: "flex", gap: "10px" }}>
-            {/* Product Price */}
-=======
-          <div style={{ display: "flex", gap: "10px" }}>
->>>>>>> 4b61a809c19b4b8bcea21c06dcfa1aabc4389570
             <Form.Group controlId="price" className="mb-3" style={{ flex: "1" }}>
               <Form.Label>Price</Form.Label>
               <Form.Control
@@ -240,11 +149,6 @@ const EditProduct = () => {
                 required
               />
             </Form.Group>
-<<<<<<< HEAD
-
-            {/* Product Rating */}
-=======
->>>>>>> 4b61a809c19b4b8bcea21c06dcfa1aabc4389570
             <Form.Group controlId="rating" className="mb-3" style={{ flex: "1" }}>
               <Form.Label>Rating</Form.Label>
               <Form.Control
@@ -258,11 +162,6 @@ const EditProduct = () => {
               />
             </Form.Group>
           </div>
-<<<<<<< HEAD
-
-          {/* Product Image */}
-=======
->>>>>>> 4b61a809c19b4b8bcea21c06dcfa1aabc4389570
           <Form.Group controlId="image" className="mb-3">
             <Form.Label>Image</Form.Label>
             <Form.Control
@@ -273,23 +172,10 @@ const EditProduct = () => {
             />
             {product.image && typeof product.image === "string" && (
               <div className="mt-2">
-<<<<<<< HEAD
-                <img
-                  src={product.image}
-                  alt="Current"
-                  style={{ maxWidth: "100px" }}
-                />
-              </div>
-            )}
-          </Form.Group>
-
-          {/* Update Button */}
-=======
                 <img src={product.image} alt="Current" style={{ maxWidth: "100px" }} />
               </div>
             )}
           </Form.Group>
->>>>>>> 4b61a809c19b4b8bcea21c06dcfa1aabc4389570
           <Button variant="success" type="submit" className="w-100" disabled={loading}>
             {loading ? (
               <>
@@ -300,11 +186,6 @@ const EditProduct = () => {
             )}
           </Button>
         </Form>
-<<<<<<< HEAD
-
-        {/* Message Display */}
-=======
->>>>>>> 4b61a809c19b4b8bcea21c06dcfa1aabc4389570
         {message && (
           <Alert
             variant={message.includes("success") ? "success" : "danger"}

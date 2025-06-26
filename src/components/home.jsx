@@ -2,16 +2,24 @@ import './home.css';
 import React, { useState, useEffect } from 'react';
 import Slider from "./header/slider";
 import Headernav from './header/headernav';
+<<<<<<< HEAD
 import { Container, Row, Col, Card, Carousel, Button } from "react-bootstrap";
 import Cards from './cards';
 import Categories from './categories/categories';
 import AboutUs from './aboutus';
 
+=======
+import { Container, Row, Col, Card, Carousel } from "react-bootstrap";
+import Cards from './cards';
+import Categories from './categories/categories';
+import AboutUs from './aboutus';
+>>>>>>> 4b61a809c19b4b8bcea21c06dcfa1aabc4389570
 import MailOutlineIcon from '@mui/icons-material/MailOutline';
 import LocalPhoneIcon from '@mui/icons-material/LocalPhone';
 import Decorslider from './header/decorslider';
 import VideoSlider from './videoslider';
 import './categories/category.css';
+<<<<<<< HEAD
 
 import { Fade, Slide, Zoom } from "react-awesome-reveal";
 import { useNavigate } from 'react-router-dom';
@@ -19,11 +27,19 @@ import { useNavigate } from 'react-router-dom';
 function Home() {
   const [scrollPercentage, setScrollPercentage] = useState(0);
    const nav=useNavigate()
+=======
+import { Fade, Slide, Zoom } from "react-awesome-reveal";
+
+function Home() {
+  const [scrollPercentage, setScrollPercentage] = useState(0);
+
+>>>>>>> 4b61a809c19b4b8bcea21c06dcfa1aabc4389570
   useEffect(() => {
     const handleScroll = () => {
       const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
       const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
       const percentage = (scrollTop / scrollHeight) * 100;
+<<<<<<< HEAD
 
       setScrollPercentage(percentage);
       localStorage.setItem('scrollPercentage', percentage); 
@@ -31,6 +47,13 @@ function Home() {
 
     window.addEventListener('scroll', handleScroll);
 
+=======
+      setScrollPercentage(percentage);
+      localStorage.setItem('scrollPercentage', percentage); // Save to localStorage
+    };
+
+    window.addEventListener('scroll', handleScroll);
+>>>>>>> 4b61a809c19b4b8bcea21c06dcfa1aabc4389570
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
@@ -81,6 +104,7 @@ function Home() {
       </Slide>
 
       <br />
+<<<<<<< HEAD
       <br /><hr />
       {/* <Zoom triggerOnce>
         <AboutUs />
@@ -94,6 +118,20 @@ function Home() {
               <p><MailOutlineIcon fontSize="small" /> claynest@gmail.com</p>
               <p><LocalPhoneIcon fontSize="small" /> +91 9087654312</p>
               <Button variant='warning'  onClick={()=>nav('/about')}>About US</Button>
+=======
+
+      <footer className="footer">
+        <Container>
+          <Row className="justify-content-center text-center">
+            <Col xs={12} sm={6} md={4} lg={3}>
+              <p>&copy; {new Date().getFullYear()} ClayNest. All Rights Reserved.</p>
+            </Col>
+            <Col xs={12} sm={6} md={4} lg={3}>
+              <p><MailOutlineIcon fontSize="small" /> claynest@gmail.com</p>
+            </Col>
+            <Col xs={12} sm={6} md={4} lg={3}>
+              <p><LocalPhoneIcon fontSize="small" /> 8606454877</p>
+>>>>>>> 4b61a809c19b4b8bcea21c06dcfa1aabc4389570
             </Col>
           </Row>
         </Container>

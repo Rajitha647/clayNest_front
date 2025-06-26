@@ -1,10 +1,16 @@
 body, html {
   overflow-x: hidden;
+<<<<<<< HEAD
   
 }
 
 
 /* Video card styles */
+=======
+}
+
+
+>>>>>>> 4b61a809c19b4b8bcea21c06dcfa1aabc4389570
 .video-card {
   padding: 10px;
   text-align: center;
@@ -41,3 +47,49 @@ body, html {
     justify-content: center;
     text-align: center;
 }
+<<<<<<< HEAD
+=======
+
+/* Footer Styles */
+.footer {
+  background: #c08181; /* Softer tone */
+  color: #fff;
+  padding: 15px 0; /* Reduce excessive height */
+  text-align: center;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  font-size: 14px;
+}
+
+/* Contact Info */
+.footer .contact-info {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Icons */
+.footer .contact-info i {
+  margin-right: 5px;
+  color: white;
+}
+
+/* Ensuring Footer Stays at the Bottom */
+html, body {
+  height: 100%;
+}
+
+.main-content {
+  flex: 1;
+}
+
+footer {
+  margin-top: auto;
+}
+
+>>>>>>> 4b61a809c19b4b8bcea21c06dcfa1aabc4389570

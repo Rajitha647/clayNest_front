@@ -7,6 +7,13 @@ import mudstove from '../images/mudstove.webp'
 import cookingpot from '../images/cookingpot.webp'
 import lamp from '../images/lamp1.jpg'
 import { useNavigate } from 'react-router-dom';
+<<<<<<< HEAD
+=======
+import MailOutlineIcon from '@mui/icons-material/MailOutline';
+import LocalPhoneIcon from '@mui/icons-material/LocalPhone';
+
+
+>>>>>>> 4b61a809c19b4b8bcea21c06dcfa1aabc4389570
 function Categories (){
 
   const nav=useNavigate();
@@ -33,7 +40,10 @@ function Categories (){
             <div className="homediv">
                 <Row className="homedivRow">
                     <Col lg={8} className="d-flex flex-wrap justify-content-center">
+<<<<<<< HEAD
                         {/* Group each image with its title */}
+=======
+>>>>>>> 4b61a809c19b4b8bcea21c06dcfa1aabc4389570
                         <div className="image-item">
                             <img className="category-img" src={statue} alt="Statue"  onClick={handledecor}/>
                             <p className="image-title">Decorating items</p>
@@ -52,14 +62,21 @@ function Categories (){
                             <p className="image-title">Mud Stove</p>
                         </div>
                       
+<<<<<<< HEAD
                         {/* <div className="image-item">
                             <img className="category-img" src={waterdispenser} alt="Water Dispenser" />
                             <p className="image-title">Water Dispenser</p>
                         </div> */}
+=======
+>>>>>>> 4b61a809c19b4b8bcea21c06dcfa1aabc4389570
                     </Col>
                 </Row>
             </div>
         </Container>
+<<<<<<< HEAD
+=======
+       
+>>>>>>> 4b61a809c19b4b8bcea21c06dcfa1aabc4389570
         </>
     );
 }

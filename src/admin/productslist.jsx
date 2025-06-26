@@ -3,10 +3,6 @@ import axios from "axios";
 import "bootstrap/dist/css/bootstrap.min.css";
 import CurrencyRupeeIcon from '@mui/icons-material/CurrencyRupee';
 import { useNavigate } from "react-router-dom";
-<<<<<<< HEAD
-import AdminNavbar from "./navbar";
-=======
->>>>>>> 4b61a809c19b4b8bcea21c06dcfa1aabc4389570
 const ProductList = () => {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -15,11 +11,7 @@ const ProductList = () => {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-<<<<<<< HEAD
         const response = await axios.get("http://localhost:9000/products/getproducts");
-=======
-        const response = await axios.get("https://claynest-back.onrender.com/products/getproducts");
->>>>>>> 4b61a809c19b4b8bcea21c06dcfa1aabc4389570
         if (response.data.status === 1) {
           setProducts(response.data.data);
         } else {
@@ -36,17 +28,10 @@ const ProductList = () => {
   }, []);
 
 
-<<<<<<< HEAD
-  const navigate = useNavigate(); // Initialize useNavigate hook
-
-  const handleEdit = (productId) => {
-    navigate(`/edit/${productId}`);  // Navigate to the Edit Product page with the productId
-=======
   const navigate = useNavigate(); 
 
   const handleEdit = (productId) => {
     navigate(`/edit/${productId}`);  
->>>>>>> 4b61a809c19b4b8bcea21c06dcfa1aabc4389570
   };
 
 
@@ -54,15 +39,9 @@ const ProductList = () => {
     const confirmDelete = window.confirm("Are you sure you want to delete this product?");
     
     if (confirmDelete) {
-<<<<<<< HEAD
-      console.log("Deleting product with ID:", productId);  // Log the ID
-      try {
-        const response = await axios.delete(`http://localhost:9000/products/deleteproducts/${productId}`);
-=======
       console.log("Deleting product with ID:", productId);  
       try {
-        const response = await axios.delete(`https://claynest-back.onrender.com/products/deleteproducts/${productId}`);
->>>>>>> 4b61a809c19b4b8bcea21c06dcfa1aabc4389570
+        const response = await axios.delete(`http://localhost:9000/products/deleteproducts/${productId}`);
         if (response.data.status === 1) {
           setProducts((prevProducts) => prevProducts.filter((product) => product._id !== productId));
           alert("Product deleted successfully.");
@@ -81,11 +60,7 @@ const ProductList = () => {
   };
   
   return (
-<<<<<<< HEAD
-    <div className="container mt-5" >
-=======
     <div className="container mt-5">
->>>>>>> 4b61a809c19b4b8bcea21c06dcfa1aabc4389570
       <h2 className="text-center mb-4" style={{color:"brown",fontFamily:"serif",fontSize:"30px"}}>Product List</h2>
       {loading ? (  
         <p>Loading products...</p>
@@ -97,11 +72,7 @@ const ProductList = () => {
             <div key={product._id} className="col-lg-4 col-md-6 col-sm-12 mb-4">
               <div className="card shadow-sm h-100">
                 <img
-<<<<<<< HEAD
                   src={`http://localhost:9000/uploads/${product.image}`}
-=======
-                  src={`https://claynest-back.onrender.com/uploads/${product.image}`}
->>>>>>> 4b61a809c19b4b8bcea21c06dcfa1aabc4389570
                   className="card-img-top"
                   alt={product.title}
                   style={{ height: "150px", objectFit: "contain" }}
@@ -119,10 +90,6 @@ const ProductList = () => {
                     <br />
                     <strong>Stock:</strong> {product.stock}
                   </p>
-<<<<<<< HEAD
-                   {/* Edit and Delete buttons */}
-=======
->>>>>>> 4b61a809c19b4b8bcea21c06dcfa1aabc4389570
                    <div className="d-flex justify-content-between">
                     <button
                       className="btn btn-success btn-sm"

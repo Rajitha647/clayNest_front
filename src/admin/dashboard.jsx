@@ -3,10 +3,6 @@ import axios from "axios";
 import AdminNavbar from "./navbar";
 import { useNavigate } from "react-router-dom";
 
-<<<<<<< HEAD
-
-=======
->>>>>>> 4b61a809c19b4b8bcea21c06dcfa1aabc4389570
 function Dashboard() {
   
   const [totalUsers, setTotalUsers] = useState(0);
@@ -18,15 +14,9 @@ function Dashboard() {
     const fetchDashboardData = async () => {
       try {
         const [usersResponse, productsResponse, ordersResponse] = await Promise.all([
-<<<<<<< HEAD
           axios.get("http://localhost:9000/user/totaluser"),
           axios.get("http://localhost:9000/products/totalproduct"),
           axios.get("http://localhost:9000/order/totalorder"),
-=======
-          axios.get("https://claynest-back.onrender.com/user/totaluser"),
-          axios.get("https://claynest-back.onrender.com/products/totalproduct"),
-          axios.get("https://claynest-back.onrender.com/order/totalorder"),
->>>>>>> 4b61a809c19b4b8bcea21c06dcfa1aabc4389570
         ]);
   
         console.log('Users:', usersResponse.data);
@@ -47,34 +37,20 @@ function Dashboard() {
 
   const hideScrollbarStyles = {
     scrollbarWidth: "none", 
-<<<<<<< HEAD
-    msOverflowStyle: "none",
-=======
     msOverflowStyle: "none", 
->>>>>>> 4b61a809c19b4b8bcea21c06dcfa1aabc4389570
     WebkitOverflowScrolling: "touch", 
     overflowY: "scroll", 
   };
 
   return (
-<<<<<<< HEAD
-    <>
-=======
->>>>>>> 4b61a809c19b4b8bcea21c06dcfa1aabc4389570
     <div style={{ display: "flex", height: "100vh" }}>
      <AdminNavbar/>
       <div
         style={{
           padding: "20px",
-<<<<<<< HEAD
-          width: "calc(100% - 250px)",
-          overflowY: "auto",
-          backgroundColor: "#f4f4f4", 
-=======
           width: "calc(100% - 250px)", 
           overflowY: "auto",
           backgroundColor: "#f4f4f4",
->>>>>>> 4b61a809c19b4b8bcea21c06dcfa1aabc4389570
         }}
       >
         <div
@@ -86,17 +62,10 @@ function Dashboard() {
         >
           <div
             style={{
-<<<<<<< HEAD
-              // backgroundColor: "#28a745", 
-              padding: "20px",
-              borderRadius: "10px",
-              color:"black",
-=======
               backgroundColor: "#28a745", 
               padding: "20px",
               borderRadius: "10px",
               color: "#fff",
->>>>>>> 4b61a809c19b4b8bcea21c06dcfa1aabc4389570
               width: "30%",
               textAlign: "center",
             }}
@@ -107,17 +76,10 @@ function Dashboard() {
 
           <div
             style={{
-<<<<<<< HEAD
-              // backgroundColor: "#28a745", 
-              padding: "20px",
-              borderRadius: "10px",
-              color:"black",
-=======
               backgroundColor: "#28a745", 
               padding: "20px",
               borderRadius: "10px",
               color: "#fff",
->>>>>>> 4b61a809c19b4b8bcea21c06dcfa1aabc4389570
               width: "30%",
               textAlign: "center",
             }}
@@ -128,17 +90,10 @@ function Dashboard() {
 
           <div
             style={{
-<<<<<<< HEAD
-              // backgroundColor: "#28a745", 
-              padding: "20px",
-              borderRadius: "10px",
-              color:"black",
-=======
               backgroundColor: "#28a745",
               padding: "20px",
               borderRadius: "10px",
               color: "#fff",
->>>>>>> 4b61a809c19b4b8bcea21c06dcfa1aabc4389570
               width: "30%",
               textAlign: "center",
             }}
@@ -149,10 +104,6 @@ function Dashboard() {
         </div>
       </div>
     </div>
-<<<<<<< HEAD
-   </>
-=======
->>>>>>> 4b61a809c19b4b8bcea21c06dcfa1aabc4389570
   );
 }
 

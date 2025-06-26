@@ -49,6 +49,7 @@ function Cards() {
                             <CurrencyRupeeIcon fontSize="small" /> {list.price}
                         </Card.Text>
                         <Card.Text className="product-description">{list.description}</Card.Text>
+<<<<<<< HEAD
                         
                         
                         
@@ -66,6 +67,8 @@ function Cards() {
                                 <ShoppingCartIcon /> Add to Cart
                             </Button>
                         </div> */}
+=======
+>>>>>>> 4b61a809c19b4b8bcea21c06dcfa1aabc4389570
                     </Card.Body>
                 </Card>
             </Col>
